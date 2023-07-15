@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
     <title>Result</title>
     <style>
@@ -14,6 +13,42 @@
             min-height: 100vh;
         }
 
+        .layout1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(180deg, #D43232 0%, rgba(189, 50, 212, 0.00) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .layout2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1377px;
+            height: 784px;
+            flex-shrink: 0;
+            border-radius: 50px;
+            background: linear-gradient(180deg, rgba(217, 217, 217, 0.50) 0%, rgba(217, 217, 217, 0.00) 100%);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .layout3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 789px;
+            height: 344px;
+            flex-shrink: 0;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.41);
+            flex-direction: column;
+        }
+
         h1 {
             color: #333;
             text-align: center;
@@ -22,39 +57,46 @@
         table {
             margin-top: 20px;
             border-collapse: collapse;
-            width: 25%;
+            width: 75%;
             max-width: 400px; /* Optional: set a maximum width to limit the table size */
+            border: 2px solid rgba(217, 217, 217, 0.50); /* Set the same border as layout2 */
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Set the same box shadow as layout2 */
         }
 
         th, td {
             padding: 8px;
-            text-align: center; /* Center the content horizontally */
-            vertical-align: middle; /* Center the content vertically */
-            border-bottom: 1px solid #ddd;
+            text-align: center;
+            border: 1px solid rgba(217, 217, 217, 0.50); /* Set the same border as layout2 */
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #da3a3a;
         }
     </style>
 </head>
 <body>
-    <h1>Prediction Results</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Result</th>
-                <th>Percentage</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for r, p in res %}
-                <tr>
-                    <td>{{ r }}</td>
-                    <td>{{ p }}%</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="layout1">
+        <div class="layout2">
+            <div class="layout3">
+                <h1>Prediction Results</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Result</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for r, p in res %}
+                            <tr>
+                                <td>{{ r }}</td>
+                                <td>{{ p }}%</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
