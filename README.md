@@ -1,6 +1,6 @@
 # Object-Detection-Web-page 
 
-This a simple Django webpage that uses the pre-trained keras application model ResNet50 to predict the object in the given Image
+This is a simple Django webpage that uses the pre-trained keras application model ResNet50 to predict the object in the given Image
 
 Python Libraries used:
 
